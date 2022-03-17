@@ -1,43 +1,45 @@
 import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import DisplayComponent from './components/DisplayComponent';
+import DispCompBtn from './components/DispCompBtn';
+import Draggable from 'react-draggable';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [time, setTime] = useState({ ms: 0, s: 0, m: 0, h: 0 });
+  const [interv, setInterv] = useState();
+  const [status, setSatus] = useState(0);
+
+  const start = () => {
+    run();
+    setInterv(setInterval(run, 10));
+  };
+
+  let updatedMs = time.ms, updatedS = time.s, updatedM = time.m, updatedH = time.h;
+
+  const run = () => {
+    if (updatedM === 60) {
+      updatedH++;
+      updatedM = 0;
+    }
+    if (updatedS === 60) {
+      updatedM++;
+      updatedS = 0;
+    }
+    if (updatedMs === 100) {
+      updatedS++;
+      updatedMs = 0;
+    }
+    updatedMs++;
+    return setTime({ ms: updatedMs, s: updatedS, m: updatedM, h: updatedH });
+  }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div className="App bg-gray-800 min-h-screen py-10">
+      <div className="clock-holder max-w-md bg-slate-500 ">
+        <div className="stop-watch">
+          <DisplayComponent time={time} />
+          <DispCompBtn start={start} status={status}/>
+        </div>
+      </div>
     </div>
   )
 }
