@@ -19,6 +19,17 @@ const Dispcompbtn = (props) => {
                     >Reset</button>
                 </div> : ''
             }
+
+            {(props.status === 2) ?
+                <div>
+                    <button className="bg-green-500"
+                        onClick={props.resume}
+                    >Resume</button>
+                    <button className="bg-yellow-500"
+                        onClick={props.reset}
+                    >Reset</button>
+                </div> : ''
+            }
         </div>
     );
 }
