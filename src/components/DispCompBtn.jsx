@@ -4,17 +4,17 @@ const Dispcompbtn = (props) => {
     return (
         <div>
             {(props.status === 0) ?
-                <button className="bg-sky-500/50 hover:bg-sky-700"
+                <button className="bg-gray-900 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded"
                     onClick={props.start}
                 >Start</button> : ''
             }
 
             {(props.status === 1) ?
                 <div>
-                    <button className="bg-red-500"
+                    <button className="bg-gray-900 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded"
                         onClick={props.stop}
                     >Stop</button>
-                    <button className="bg-yellow-500"
+                    <button className="bg-gray-900 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded"
                         onClick={props.reset}
                     >Reset</button>
                 </div> : ''
@@ -22,10 +22,10 @@ const Dispcompbtn = (props) => {
 
             {(props.status === 2) ?
                 <div>
-                    <button className="bg-green-500"
+                    <button className="bg-gray-900 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded"
                         onClick={props.resume}
                     >Resume</button>
-                    <button className="bg-yellow-500"
+                    <button className="bg-gray-900 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded"
                         onClick={props.reset}
                     >Reset</button>
                 </div> : ''

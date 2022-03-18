@@ -53,9 +53,9 @@ function App() {
   const resume = () => start();
 
   return (
-    <div className="App bg-gray-800 min-h-screen py-10">
-      <div className="clock-holder max-w-md bg-slate-500 ">
-        <div className="stop-watch">
+    <div className="App bg-gray-800 min-h-screen py-10 flex items-center justify-center">
+      <div className="clock-holder bg-slate-500 rounded-xl">
+        <div className="stop-watch h-80 text-center flex flex-col justify-center">
           <DisplayComponent time={time} />
           <DispCompBtn start={start} status={status} stop={stop} reset={reset} resume={resume}/>
         </div>
