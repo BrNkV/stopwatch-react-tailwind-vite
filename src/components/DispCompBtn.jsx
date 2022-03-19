@@ -4,17 +4,17 @@ const Dispcompbtn = (props) => {
     return (
         <div>
             {(props.status === 0) ?
-                <button className="bg-gray-900 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded"
+                <button className="mx-2 my-2 bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-6 py-2 text-xl focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-indigo-600"
                     onClick={props.start}
                 >Start</button> : ''
             }
 
             {(props.status === 1) ?
                 <div>
-                    <button className="bg-gray-900 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded"
+                    <button className="mx-2 my-2 bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-6 py-2 text-xl focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-indigo-600"
                         onClick={props.stop}
                     >Stop</button>
-                    <button className="bg-gray-900 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded"
+                    <button className="mx-2 my-2 bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-6 py-2 text-xl focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-indigo-600"
                         onClick={props.reset}
                     >Reset</button>
                 </div> : ''
@@ -22,10 +22,10 @@ const Dispcompbtn = (props) => {
 
             {(props.status === 2) ?
                 <div>
-                    <button className="bg-gray-900 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded"
+                    <button className="mx-2 my-2 bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-6 py-2 text-xl focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-indigo-600"
                         onClick={props.resume}
                     >Resume</button>
-                    <button className="bg-gray-900 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded"
+                    <button className="mx-2 my-2 bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-6 py-2 text-xl focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-indigo-600"
                         onClick={props.reset}
                     >Reset</button>
                 </div> : ''
